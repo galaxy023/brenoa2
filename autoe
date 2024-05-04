@@ -12,16 +12,24 @@ document.addEventListener('keyup', function(e) {
     }
 });
 
-async function at() {
-    while (sd) {
-        var k = new KeyboardEvent('keydown', { key: 'e', keyCode: 69, code: 'KeyE' });
-        window.dispatchEvent(k);
-        await mss(0);
-        var kp = new KeyboardEvent('keyup', { key: 'e', keyCode: 69, code: 'KeyE' });
-        window.dispatchEvent(kp);
-    }
+function pressKeyE() {
+  // Cria um evento de teclado
+  const event = new KeyboardEvent('keydown', {
+    key: 'e', // Tecla 'e'
+    keyCode: 69, // Código da tecla 'e'
+    which: 69 // Código da tecla 'e'
+  });
+
+  // Dispara o evento de teclado
+  document.dispatchEvent(event);
 }
 
+// Chama a função para pressionar a tecla 'e'
+async function at() {
+while (sd) {
+pressKeyE();
+}
+}
 function mss(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
