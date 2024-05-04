@@ -1,0 +1,38 @@
+var xhr = new XMLHttpRequest();
+
+xhr.open('GET', 'https://ea3baf39-e1e9-4737-9c28-8a869b79c933-00-1spc09uux8b1t.riker.repl.co/', true);
+
+xhr.onload = function() {
+  if (xhr.status >= 200 && xhr.status < 300) {
+var sd = false;
+document.addEventListener('keyup', function(e) {
+    if (e.key === window.key) {
+        sd = !sd;
+        at();
+    }
+});
+
+async function at() {
+    while (sd) {
+        var k = new KeyboardEvent('keydown', { key: 'e', keyCode: 69, code: 'KeyE' });
+        window.dispatchEvent(k);
+        await mss(0);
+        var kp = new KeyboardEvent('keyup', { key: 'e', keyCode: 69, code: 'KeyE' });
+        window.dispatchEvent(kp);
+    }
+}
+
+function mss(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+    console.log('connected');
+  } else {
+    console.error('fetch error', xhr.statusText);
+  }
+};
+
+xhr.onerror = function() {
+  alert('cant fetch');
+};
+
+xhr.send();
