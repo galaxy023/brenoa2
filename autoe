@@ -27,6 +27,8 @@ function pressKeyE() {
 // Chama a função para pressionar a tecla 'e'
 async function at() {
 while (sd) {
+await mss(1);
+console.log('pressed');
 pressKeyE();
 }
 }
