@@ -14,7 +14,7 @@ document.addEventListener('keyup', function(e) {
 
 function pressKeyE() {
   // Cria um evento de teclado
-  const event = new KeyboardEvent('keydown', {
+  const event = new KeyboardEvent('keydown', 'keyup' {
     key: 'e', // Tecla 'e'
     keyCode: 69, // Código da tecla 'e'
     which: 69 // Código da tecla 'e'
