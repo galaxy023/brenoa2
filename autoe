@@ -26,10 +26,10 @@ function pressKeyE() {
   });
 
   // Dispara o evento de teclado pressionando a tecla 'e'
-  document.dispatchEvent(keyDownEvent);
+  window.dispatchEvent(keyDownEvent);
 
   // Dispara o evento de teclado soltando a tecla 'e' após um pequeno interval
-    document.dispatchEvent(keyUpEvent);
+    window.dispatchEvent(keyUpEvent);
 }
 
 // Cham
