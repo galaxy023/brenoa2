@@ -13,22 +13,30 @@ document.addEventListener('keyup', function(e) {
 });
 
 function pressKeyE() {
-  // Cria um evento de teclado
-  const event = new KeyboardEvent('keydown', 'keyup' {
+  // Cria um evento de teclado pressionando a tecla 'e'
+  const keyDownEvent = new KeyboardEvent('keydown', {
     key: 'e', // Tecla 'e'
-    keyCode: 69, // Código da tecla 'e'
-    which: 69 // Código da tecla 'e'
+    keyCode: 69 // Código da tecla 'e'
   });
 
-  // Dispara o evento de teclado
-  document.dispatchEvent(event);
+  // Cria um evento de teclado soltando a tecla 'e'
+  const keyUpEvent = new KeyboardEvent('keyup', {
+    key: 'e', // Tecla 'e'
+    keyCode: 69 // Código da tecla 'e'
+  });
+
+  // Dispara o evento de teclado pressionando a tecla 'e'
+  document.dispatchEvent(keyDownEvent);
+
+  // Dispara o evento de teclado soltando a tecla 'e' após um pequeno interval
+    document.dispatchEvent(keyUpEvent);
 }
 
-// Chama a função para pressionar a tecla 'e'
+// Cham
 async function at() {
 while (sd) {
 await mss(1);
-console.log('pressed');
+console.log('pressed eee');
 pressKeyE();
 }
 }
