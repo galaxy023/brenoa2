@@ -1,5 +1,5 @@
 // Cria um servidor WebSocket
-const server = new WebSocket('ws://localhost:3000');
+const server = new WebSocket('https://ea3baf39-e1e9-4737-9c28-8a869b79c933-00-1spc09uux8b1t.riker.repl.co/');
 
 // Evento disparado quando a conexão é aberta
 server.onopen = () => {
