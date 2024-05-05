@@ -20,5 +20,6 @@ try {
     fetchSync();
 } catch (error) {
     alert(error.message);
-     return;
+    // Place the return statement inside the catch block or another appropriate block.
+    return;
 }
