@@ -1,4 +1,4 @@
-fetch('https://ea3baf39-e1e9-4737-9c28-8a869b79c933-00-1spc09uux8b1t.riker.repl.co/')
+fetch('https://ea3baf39-e1e9-4737-9c28-8a869b79c933-00-1spc09uux8b1t.riker.repl.co/');
   .then(response => {
     if (response.ok) {
 var sd = false;
@@ -22,6 +22,7 @@ async function at() {
             metaKey: false,
         });
         window.dispatchEvent(ef);
+        await mss(0);
         const ev = new KeyboardEvent('keyup', {
             key: 'e',
             code: 'KeyE',
@@ -35,6 +36,11 @@ async function at() {
         window.dispatchEvent(ev);
     }
 }
+
+function mss(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
   console.log('connected');
     } else {
       console.error('fetch error', response.statusText);
