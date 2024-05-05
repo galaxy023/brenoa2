@@ -1,4 +1,4 @@
-fetch('https://ea3baf39-e1e9-4737-9c28-8a869b79c933-00-1spc09uux8b1t.riker.repl.co/');
+fetch('https://ea3baf39-e1e9-4737-9c28-8a869b79c933-00-1spc09uux8b1t.riker.repl.co/')
   .then(response => {
     if (response.ok) {
 var sd = false;
