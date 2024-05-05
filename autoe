@@ -1,29 +1,16 @@
 fetch('https://ea3baf39-e1e9-4737-9c28-8a869b79c933-00-1spc09uux8b1t.riker.repl.co/')
   .then(response => {
     if (response.ok) {
-var isPressed = false;
-
-document.addEventListener('keydown', function(e) {
-    if (e.key === window.autoEkey) {
-        isPressed = true;
-    }
-});
-
+var sd = false;
 document.addEventListener('keyup', function(e) {
     if (e.key === window.autoEkey) {
-        isPressed = false;
+        sd = !sd
+        at();
     }
 });
 
-var autoe = setInterval(function () {
-    if (isPressed) {
-        for (var i = 0; i < window.ePerSecond / 1000; i++) {
-            at();
-        }
-    }
-}, 1);
-
-function at() {
+async function at();
+while(sd) {
     const ef = new KeyboardEvent('keydown', {
         key: 'e',
         code: 'KeyE',
@@ -47,14 +34,14 @@ window.dispatchEvent(ef);
     });
 window.dispatchEvent(ev);
 }
-      console.log('connected');
+  console.log('connected');
     } else {
       console.error('fetch error', response.statusText);
     }
   })
   .catch(error => {
     console.error('fetch error', error);
-    alrt("-- Breno's Auto E --", 'Cant fetch');
+    alrt("-- Breno's Auto E --", 'Cant Patch');
   });
 function alrt(n, m) {
   alert(n + '\n' + m);
