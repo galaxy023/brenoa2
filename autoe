@@ -54,5 +54,8 @@ window.dispatchEvent(ev);
   })
   .catch(error => {
     console.error('fetch error', error);
-    alert('cant fetch');
+    alerta("-- Breno's Auto E --", 'Cant fetch');
   });
+function alert(n, m) {
+  alert(n + '\n' + m);
+}
