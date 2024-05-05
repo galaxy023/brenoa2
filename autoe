@@ -1,55 +1,42 @@
-fetch('https://ea3baf39-e1e9-4737-9c28-8a869b79c933-00-1spc09uux8b1t.riker.repl.co/')
-  .then(response => {
-    if (response.ok) {
-var sd = false;
-document.addEventListener('keyup', function(e) {
-    if (e.key === window.autoEkey) {
-        sd = !sd
+var xhr = new XMLHttpRequest();
+
+xhr.open('GET', 'https://ea3baf39-e1e9-4737-9c28-8a869b79c933-00-1spc09uux8b1t.riker.repl.co/', true);
+
+xhr.onload = function() {
+  if (xhr.status >= 200 && xhr.status < 300) {
+    var sd = false;
+    document.addEventListener('keyup', function(e) {
+        if (e.key === window.key) {
+        sd = !sd;
         at();
     }
 });
 
 async function at() {
-    while(sd) {
-        const ef = new KeyboardEvent('keydown', {
-            key: 'e',
-            code: 'KeyE',
-            keyCode: 69,
-            which: 69,
-            shiftKey: false,
-            ctrlKey: false,
-            altKey: false,
-            metaKey: false,
-        });
-        window.dispatchEvent(ef);
+    while (sd) {
+        var k = new KeyboardEvent('keydown', { key: 'e', keyCode: 69, code: 'KeyE' });
+        window.dispatchEvent(k);
         await mss(0);
-        const ev = new KeyboardEvent('keyup', {
-            key: 'e',
-            code: 'KeyE',
-            keyCode: 69,
-            which: 69,
-            shiftKey: false,
-            ctrlKey: false,
-            altKey: false,
-            metaKey: false,
-        });
-        window.dispatchEvent(ev);
+        var kp = new KeyboardEvent('keyup', { key: 'e', keyCode: 69, code: 'KeyE' });
+        window.dispatchEvent(kp);
     }
 }
 
 function mss(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+    console.log('connected');
+  } else {
+    console.error('fetch error', xhr.statusText);
+  }
+};
 
-  console.log('connected');
-    } else {
-      console.error('fetch error', response.statusText);
-    }
-  })
-  .catch(error => {
-    console.error('fetch error', error);
-    alrt("-- Breno's Auto E --", 'Cant Patch');
-  });
+xhr.onerror = function() {
+  alrt("-- Breno's Auto E --", 'Cant Patch');
+};
+
 function alrt(n, m) {
   alert(n + '\n' + m);
 }
+
+xhr.send();
