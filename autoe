@@ -9,30 +9,31 @@ document.addEventListener('keyup', function(e) {
     }
 });
 
-async function at();
-while(sd) {
-    const ef = new KeyboardEvent('keydown', {
-        key: 'e',
-        code: 'KeyE',
-        keyCode: 69,
-        which: 69,
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
-    });
-window.dispatchEvent(ef);
+async function at() {
+    while(sd) {
+        const ef = new KeyboardEvent('keydown', {
+            key: 'e',
+            code: 'KeyE',
+            keyCode: 69,
+            which: 69,
+            shiftKey: false,
+            ctrlKey: false,
+            altKey: false,
+            metaKey: false,
+        });
+        window.dispatchEvent(ef);
         const ev = new KeyboardEvent('keyup', {
-        key: 'e',
-        code: 'KeyE',
-        keyCode: 69,
-        which: 69,
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
-    });
-window.dispatchEvent(ev);
+            key: 'e',
+            code: 'KeyE',
+            keyCode: 69,
+            which: 69,
+            shiftKey: false,
+            ctrlKey: false,
+            altKey: false,
+            metaKey: false,
+        });
+        window.dispatchEvent(ev);
+    }
 }
   console.log('connected');
     } else {
