@@ -4,9 +4,6 @@ xhr.open('GET', 'https://741a0b71-bbf1-4452-95d9-7f5426535442-00-3jed4xn0g665r.k
 
 xhr.onload = function() {
   if (xhr.status >= 200 && xhr.status < 300) {
-      window.autoE = ' ';
-      window.EperSecond = 20;
-
       let tm = 2;
       let ac = false;
 
