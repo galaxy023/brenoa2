@@ -7,7 +7,7 @@ xhr.onload = function() {
       window.autoE = ' ';
       window.EperSecond = 20;
 
-      let tm = 10;
+      let tm = 2;
       let ac = false;
 
       document.addEventListener("keydown", function(e) {
