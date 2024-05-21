@@ -4,39 +4,50 @@ xhr.open('GET', 'https://741a0b71-bbf1-4452-95d9-7f5426535442-00-3jed4xn0g665r.k
 
 xhr.onload = function() {
   if (xhr.status >= 200 && xhr.status < 300) {
-    var sd = false;
-    document.addEventListener('keyup', function(e) {
-        if (e.key === window.key) {
-        sd = !sd;
-        at();
-    }
-});
+      window.autoE = ' ';
+      window.EperSecond = 20;
 
-async function at() {
-    while (sd) {
-        var k = new KeyboardEvent('keydown', { key: 'e', keyCode: 69, code: 'KeyE' });
-        window.dispatchEvent(k);
-        await mss(0);
-        var kp = new KeyboardEvent('keyup', { key: 'e', keyCode: 69, code: 'KeyE' });
-        window.dispatchEvent(kp);
-    }
-}
+      let tm = 10;
+      let ac = false;
 
-function mss(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-    console.log('connected');
+      document.addEventListener("keydown", function(e) {
+          if (e.key === window.autoE) {
+              ac = true;
+          }
+      });
+
+      document.addEventListener("keyup", function(e) {
+          if (e.key === window.autoE) {
+              ac = false;
+          }
+      });
+
+      let autoe = setInterval(function () {
+          if (ac) {
+              for (let i = 0; i < tm * window.EperSecond; i++) {
+                  ev();
+              }
+          }
+      }, 1);
+
+      function ev() {
+          var d = new KeyboardEvent('keydown', { key: 'e', keyCode: 69, code: 'KeyE' });
+          window.dispatchEvent(d);
+          var p = new KeyboardEvent('keyup', { key: 'e', keyCode: 69, code: 'KeyE' });
+          window.dispatchEvent(p);
+      }
+      console.log('alive');
   } else {
-    console.error('fetch error', xhr.statusText);
+      console.error('fetch error', xhr.statusText);
   }
 };
 
-xhr.onerror = function() {
-  alrt("-- Breno's Auto E --", 'Cant Patch');
-};
+    xhr.onerror = function() {
+        alrt("-- Breno's Auto E --", 'Cant Patch');
+    };
 
-function alrt(n, m) {
-  alert(n + '\n' + m);
-}
+    function alrt(n, m) {
+        alert(n + '\n' + m);
+    }
 
 xhr.send();
