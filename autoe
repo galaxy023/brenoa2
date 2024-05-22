@@ -25,7 +25,7 @@ xhr.onload = function() {
                   ev();
               }
           }
-      }, 1);
+      }, 100);
 
       function ev() {
           var d = new KeyboardEvent('keydown', { key: 'e', keyCode: 69, code: 'KeyE' });
